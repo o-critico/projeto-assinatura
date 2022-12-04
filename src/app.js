@@ -8,7 +8,7 @@ const app = express();
 // set the view engine to hbs
 app.engine('hbs', engine( {defaultLayout: 'main',extname: '.hbs'} ));
 app.set('view engine', 'hbs');
-app.set('views', '/home/mess/Files/NodeJs/projeto-assinatura/src/views');
+app.set('views', '/home/mess/Files/Node/projeto-assinatura/src/views');
 app.use(express.static("images"))
 
 // Body Parser
@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 const layoutConfig = [
   {
     name: "nome",
-    fontPath: "/home/mess/Files/NodeJs/projeto-assinatura/public/fonts/Montserrat/Montserrat-SemiBold.ttf",
+    fontPath: "/home/mess/Files/Node/projeto-assinatura/public/fonts/Montserrat/Montserrat-SemiBold.ttf",
     fontStyle: "SemiBold",
     fontFamily: "Montserrat-SemiBold",
     fontSize: "38pt",
@@ -29,7 +29,7 @@ const layoutConfig = [
   },
   {
     name:"occupation",
-    fontPath: "/home/mess/Files/NodeJs/projeto-assinatura/public/fonts/Montserrat/Montserrat-Medium.ttf",
+    fontPath: "/home/mess/Files/Node/projeto-assinatura/public/fonts/Montserrat/Montserrat-Medium.ttf",
     fontStyle: "Medium",
     fontFamily: "Montserrat-Medium",
     fontSize: "19pt",
@@ -39,7 +39,7 @@ const layoutConfig = [
   },
   {
     name: "telephone",
-    fontPath: "/home/mess/Files/NodeJs/projeto-assinatura/public/fonts/Montserrat/Montserrat-Medium.ttf",
+    fontPath: "/home/mess/Files/Node/projeto-assinatura/public/fonts/Montserrat/Montserrat-Medium.ttf",
     fontStyle: "Medium",
     fontFamily: "Montserrat-Medium",
     fontSize: "15pt",
@@ -49,7 +49,7 @@ const layoutConfig = [
   },
   {
     name: "address",
-    fontPath: "/home/mess/Files/NodeJs/projeto-assinatura/public/fonts/Montserrat/Montserrat-Regular.ttf",
+    fontPath: "/home/mess/Files/Node/projeto-assinatura/public/fonts/Montserrat/Montserrat-Regular.ttf",
     fontStyle: "Regular",
     fontFamily: "Montserrat-Regular",
     fontSize: "16pt",
@@ -70,7 +70,7 @@ app.post('/', ( req, res ) => {
   }
   signatureGenerator(req.body, layoutConfig).then( () => {
     req.body.signature = true;
-    req.body.pathSignature = `/home/mess/Files/NodeJs/projeto-assinatura/public/results/${req.body.name}${req.body.lastname}.png`;
+    req.body.pathSignature = `/home/mess/Files/Node/projeto-assinatura/public/results/${req.body.name}${req.body.lastname}.png`;
     console.log(req.body);
     res.sendFile(req.body.pathSignature);
   });

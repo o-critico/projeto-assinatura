@@ -6,7 +6,7 @@ async function signatureGenerator(user, layouts) {
   const height = 532;
   const canvas = createCanvas(width, height);
   const context = canvas.getContext('2d');
-  const template = await loadImage('/home/mess/Files/NodeJs/projeto-assinatura/public/assets/background1.png');
+  const template = await loadImage('/home/mess/Files/Node/projeto-assinatura/public/assets/background1.png');
 
   context.drawImage(template, 0, 0, width, height);
 
@@ -28,7 +28,7 @@ async function signatureGenerator(user, layouts) {
   });
 
   const buffer = canvas.toBuffer('image/png');
-  const filePath = `/home/mess/Files/NodeJs/projeto-assinatura/public/results/${user.name+user.lastname}.png`;
+  const filePath = `/home/mess/Files/Node/projeto-assinatura/public/results/${user.name+user.lastname}.png`;
   fs.writeFileSync(filePath, buffer);
 
 };
