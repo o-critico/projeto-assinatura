@@ -59,21 +59,43 @@ const layoutConfig = [
   }
 ];
 
+// Class
+class User {
+  constructor (firstName, lastName, email, occupation, telephone) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.email = email;
+    this.occupation = occupation;
+    this.telephone = telephone;
+  }
+};
+
 // Routs
 app.get('/', ( req, res ) => {
   res.status(200).render('form');
 });
 
 app.post('/', ( req, res ) => {
+
+  const user = new User(
+    req.body.firstName,
+    req.body.lastName,
+    req.body.email,
+    req.body.occupation,
+    req.body.telephone
+  );
+
   if (req.body.EP2 == 'on'){
-    req.body.address = "Rua Capitão José Rodrigues do Ó, 870.\nDistrito Industrial | João Pessoa, PB."
+      user.address = "Rua Capitão José Rodrigues do Ó, 870.\nDistrito Industrial | João Pessoa, PB."
   }
-  signatureGenerator(req.body, layoutConfig).then( () => {
-    req.body.signature = true;
-    req.body.pathSignature = `/home/mess/Files/Node/projeto-assinatura/public/results/${req.body.name}${req.body.lastname}.png`;
-    console.log(req.body);
-    res.sendFile(req.body.pathSignature);
+
+  signatureGenerator(user, layoutConfig).then( () => {
+    user.pathSignature = `/home/mess/Files/Node/projeto-assinatura/public/results/${user.firstName}${user.lastName}.png`;
+    user.signature = true;
+    res.sendFile(user.pathSignature);
+    console.log(user);
   });
+
 });
 
 export default app;

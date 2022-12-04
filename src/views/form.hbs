@@ -1,9 +1,9 @@
 <form action="/" method="post">
   <label>Primeiro nome:</label>
-  <input type="text" name="name" required><br>
+  <input type="text" name="firstName" required><br>
 
   <label>Sobrenome:</label>
-  <input type="text" name="lastname"><br>
+  <input type="text" name="lastName"><br>
 
   <label>Email:</label>
   <input type="text" name="email"><br>
@@ -21,7 +21,6 @@
   <button type="submit">Gerar</button>
 </form>
 
-<img src="/home/mess/Files/Node/projeto-assinatura/public/img/newSignature.png">
 {{#if req.body.signatuture}}
   <img src="{{req.body.pathSignatuture}}">
 {{/if}}
