@@ -1,0 +1,23 @@
+{
+  "name": "projeto-assinatura",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Matheus Santos",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "canvas": "^2.10.2",
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.6",
+    "fs": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

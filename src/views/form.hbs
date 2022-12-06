@@ -1,0 +1,54 @@
+<h3 class="align-items-center">Gerador de assinaturas</h3>
+<form action="/" method="post">
+  <div class="row g-3 align-items-center">
+    <div class="col-auto">
+      <label class="form-label">Primeiro nome:</label><br>
+      <input type="text" name="firstName" required><br>
+    </div>
+
+    <div class="col-auto">
+      <label class="form-label">Sobrenome:</label><br>
+      <input type="text" name="lastName"><br>
+    </div>
+
+    <div class="col-auto">
+      <label class="form-label">Email:</label><br>
+      <input type="email" name="email"><br>
+    </div>
+
+    <div class="col-auto">
+      <label class="form-label">Cargo:</label><br>
+      <input type="text" name="occupation"><br>
+    </div>
+
+    <div class="col-auto">
+      <label class="form-label">Ramal:</label><br>
+      <input type="text" name="extNumber"><br>
+    </div>
+  </div>
+
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="branch" value="EP1">
+    <label for="EP1">EP1</label>
+  </div>
+
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="branch" value="EP2" checked>
+    <label for="EP2">EP2</label>
+  </div>
+
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="branch" value="ESUL">
+    <label for="ESUL">ESUL</label>
+  </div>
+
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="branch" value="ERN">
+    <label for="ERN">ERN</label>
+  </div>
+
+  <br>
+  <button type="submit">Gerar</button>
+</form>
+
+<img src="public/img/newSignature.png">
